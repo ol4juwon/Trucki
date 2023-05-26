@@ -14,6 +14,7 @@ export default function ConfirmPassword() {
   const handleConfirmPassword = async () => {
     try {
       const response = await fetch(`https://trucki-production.up.railway.app/auth/reset-password/${resetToken}`, {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

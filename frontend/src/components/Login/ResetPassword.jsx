@@ -13,6 +13,7 @@ export default function ResetPassword() {
 
     try {
       const response = await fetch('https://trucki-production.up.railway.app/api/auth/reset-password', {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

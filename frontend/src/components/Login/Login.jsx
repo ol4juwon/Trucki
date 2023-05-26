@@ -14,6 +14,7 @@ export default function Login() {
 
     try {
       const response = await fetch('https://trucki-production.up.railway.app/api/auth/login', {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
