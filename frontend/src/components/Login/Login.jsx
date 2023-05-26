@@ -14,7 +14,6 @@ export default function Login() {
 
     try {
       const response = await fetch('https://trucki-production.up.railway.app/api/auth/login', {
-        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,7 +21,7 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         const data = await response.json();
         console.log(data);
         // Handle success, e.g., save token to localStorage, redirect user, etc.
